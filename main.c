@@ -6,6 +6,7 @@ int main(int ac, char **av)
 	char *line = NULL, *tok = NULL, *tok2 = NULL;
 	size_t len = 0;
 	ssize_t len_line = 0;
+	unsigned int line_ctr = 1;
 
 	if (ac != 2)
 	{
@@ -20,9 +21,9 @@ int main(int ac, char **av)
 	}
 	while ((len_line = getline(&line, &len, b_code)) != -1)
 	{
-		tok = strtok(line, " ");
-		if (tok == "push")
-			tok2 = strtok (NULL, " ");
+		parse_line(line, line_ctr);
+		line_ctr++;
 	}
+	fclose(b_code);
 	return (0);
 }
