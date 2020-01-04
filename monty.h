@@ -42,5 +42,7 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **, FILE *);
 void (*get_inst(char *tok))(stack_t **, unsigned int);
 void push_stack(stack_t **, unsigned int);
 void print_stack(stack_t **, unsigned int);
+void print_top(stack_t **, unsigned int);
+void push_error(char *line, unsigned int line_ctr, stack_t **, FILE *);
 
 #endif /*MONTY_H*/

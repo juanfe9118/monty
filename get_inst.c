@@ -10,6 +10,7 @@ void (*get_inst(char *tok))(stack_t **, unsigned int)
 	instruction_t inst[] = {
 		{"push", push_stack},
 		{"pall", print_stack},
+		{"pint", print_top},
 		{NULL, NULL}
 	};
 	int i = 0;
