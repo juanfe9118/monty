@@ -7,6 +7,7 @@ int node_int = 0;
  * @line: line taken from b_code
  * @line_ctr: line counter
  * @top: top of the stack
+ * @b_code: opened file pointer to close it
  * Return: the integer parsed, 0 if no integer is parsed
  */
 void parse_line(char *line, unsigned int line_ctr, stack_t **top, FILE *b_code)
