@@ -9,7 +9,7 @@ int node_int = 0;
  * @top: top of the stack
  * Return: the integer parsed, 0 if no integer is parsed
  */
-void parse_line(char *line, unsigned int line_ctr, stack_t **top)
+void parse_line(char *line, unsigned int line_ctr, stack_t **top, FILE *b_code)
 {
 	char *tok = NULL, *tok2 = NULL;
 	void (*ins_func)(stack_t **, unsigned int);
@@ -28,6 +28,7 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top)
 				dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_ctr);
 				free(line);
 				free_stack(*top);
+				fclose(b_code);
 				exit(EXIT_FAILURE);
 			}
 			i++;
@@ -40,6 +41,7 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top)
 		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_ctr, tok);
 		free(line);
 		free_stack(*top);
+		fclose(b_code);
 		exit(EXIT_FAILURE);
 	}
 	ins_func(top, line_ctr);

@@ -29,7 +29,7 @@ int main(int ac, char **av)
 	}
 	while ((len_line = getline(&line, &len, b_code)) != -1)
 	{
-		parse_line(line, line_ctr, &top);
+		parse_line(line, line_ctr, &top, b_code);
 		line_ctr++;
 	}
 	free(line);

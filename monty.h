@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 extern int node_int;
 void free_stack(stack_t *head);
-void parse_line(char *line, unsigned int line_ctr, stack_t **);
+void parse_line(char *line, unsigned int line_ctr, stack_t **, FILE *);
 void (*get_inst(char *tok))(stack_t **, unsigned int);
 void push_stack(stack_t **, unsigned int);
 void print_stack(stack_t **, unsigned int);
