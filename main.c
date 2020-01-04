@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		line_ctr++;
 	}
 	free(line);
-	free_stack(&top);
+	free_stack(top);
 	fclose(b_code);
 	return (EXIT_SUCCESS);
 }

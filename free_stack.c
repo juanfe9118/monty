@@ -5,12 +5,12 @@
  * @head: pointer to the head of the stack
  * Return: nothing
  */
-void free_stack(stack_t **head)
+void free_stack(stack_t *head)
 {
 	stack_t *tmp, *dump;
 
-	dump = *head;
-	if (*head != NULL)
+	dump = head;
+	if (head != NULL)
 	{
 		while (dump != NULL)
 		{

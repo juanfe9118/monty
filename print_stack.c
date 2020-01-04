@@ -9,13 +9,14 @@
 void print_stack(stack_t **stack, unsigned int line_number)
 {
 	int i;
+	stack_t *head = *stack;
 
 	(void) line_number;
-	if (*stack == NULL)
+	if (head == NULL)
 		return;
-	for (i = 0; *stack != NULL; i++)
+	for (i = 0; head != NULL; i++)
 	{
-		printf("%d\n", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("%d\n", head->n);
+		head = head->next;
 	}
 }
