@@ -21,29 +21,25 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top)
 	if (strcmp(tok, "push") == 0)
 	{
 		tok2 = strtok(NULL, " \t\n");
-		if (((tok2[0] < '0' || tok2[0] > '9') && tok2[0] != '-') || tok2 == NULL)
+		while (tok2[i] != '\0')
 		{
-			dprintf(2, "L%u: usage: push integer\n", line_ctr);
-			exit(EXIT_FAILURE);
-		}
-		else
-		{
-			while (tok2[i] != '\0')
+			if (((tok2[i] < '0' || tok2[i] > '9') && tok2[0] != '-') || tok2 == NULL)
 			{
-				if (tok2[i] < '0' || tok2[i] > '9')
-				{
-					dprintf(2, "L%u: usage: push integer\n", line_ctr);
-					exit(EXIT_FAILURE);
-				}
-				i++;
+				dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_ctr);
+				free(line);
+				free_stack(*top);
+				exit(EXIT_FAILURE);
 			}
+			i++;
 		}
 		node_int = atoi(tok2);
 	}
 	ins_func = get_inst(tok);
 	if (ins_func == NULL)
 	{
-		dprintf(2, "L%u: unknown instruction %s\n", line_ctr, tok);
+		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_ctr, tok);
+		free(line);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	ins_func(top, line_ctr);

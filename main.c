@@ -18,13 +18,13 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "USAGE: monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	b_code = fopen(av[1], "r");
 	if (b_code == NULL)
 	{
-		dprintf(2, "Error: Can't open file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((len_line = getline(&line, &len, b_code)) != -1)
