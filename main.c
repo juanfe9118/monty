@@ -1,12 +1,20 @@
 #include "monty.h"
 
+/**
+ * main - entry point
+ * @ac: argument count
+ * @av: argument vector
+ * Return: EXIT_SUCCESS if no errors are passed
+ * EXIT_FAIlURE otherwise
+ */
 int main(int ac, char **av)
 {
 	FILE *b_code = NULL;
-	char *line = NULL, *tok = NULL, *tok2 = NULL;
+	char *line = NULL;
 	size_t len = 0;
 	ssize_t len_line = 0;
 	unsigned int line_ctr = 1;
+	stack_t *top = NULL;
 
 	if (ac != 2)
 	{
@@ -21,9 +29,9 @@ int main(int ac, char **av)
 	}
 	while ((len_line = getline(&line, &len, b_code)) != -1)
 	{
-		parse_line(line, line_ctr);
+		parse_line(line, line_ctr, &top);
 		line_ctr++;
 	}
 	fclose(b_code);
-	return (0);
+	return (EXIT_SUCCESS);
 }
