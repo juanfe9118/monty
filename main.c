@@ -32,6 +32,8 @@ int main(int ac, char **av)
 		parse_line(line, line_ctr, &top);
 		line_ctr++;
 	}
+	free(line);
+	free_stack(&top);
 	fclose(b_code);
 	return (EXIT_SUCCESS);
 }

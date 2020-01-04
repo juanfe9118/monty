@@ -11,6 +11,8 @@ void print_stack(stack_t **stack, unsigned int line_number)
 	int i;
 
 	(void) line_number;
+	if (*stack == NULL)
+		return;
 	for (i = 0; *stack != NULL; i++)
 	{
 		printf("%d\n", (*stack)->n);
