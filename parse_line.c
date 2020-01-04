@@ -13,6 +13,7 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top)
 {
 	char *tok = NULL, *tok2 = NULL;
 	void (*ins_func)(stack_t **, unsigned int);
+	int i = 0;
 
 	tok = strtok(line, " \t\n");
 	if (tok == NULL)
@@ -24,6 +25,18 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top)
 		{
 			dprintf(2, "L%u: usage: push integer\n", line_ctr);
 			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			while (tok2[i] != '\0')
+			{
+				if (tok2[i] < '0' || tok2[i] > '9')
+				{
+					dprintf(2, "L%u: usage: push integer\n", line_ctr);
+					exit(EXIT_FAILURE);
+				}
+				i++;
+			}
 		}
 		node_int = atoi(tok2);
 	}
