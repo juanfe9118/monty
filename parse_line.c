@@ -34,7 +34,7 @@ void parse_line(char *line, unsigned int line_ctr, stack_t **top, FILE *b_code)
 	int i = 0;
 
 	tok = strtok(line, " \t\n");
-	if (tok == NULL)
+	if (tok == NULL || tok[0] == '#')
 		return;
 	if (strcmp(tok, "push") == 0)
 	{

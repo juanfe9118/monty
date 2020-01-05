@@ -15,6 +15,10 @@ void (*get_inst(char *tok))(stack_t **, unsigned int)
 		{"swap", swap_top},
 		{"add", add_top},
 		{"nop", nop_stack},
+		{"sub", sub_top},
+		{"div", div_top},
+		{"mul", mul_top},
+		{"mod", mod_top},
 		{NULL, NULL}
 	};
 	int i = 0;
