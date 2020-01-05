@@ -48,5 +48,6 @@ void push_error(char *line, unsigned int line_ctr, stack_t **, FILE *);
 size_t stack_len(const stack_t *);
 void swap_top(stack_t **, unsigned int);
 void add_top(stack_t **, unsigned int);
+void nop_stack(stack_t **, unsigned int);
 
 #endif /*MONTY_H*/

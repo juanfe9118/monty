@@ -14,6 +14,7 @@ void (*get_inst(char *tok))(stack_t **, unsigned int)
 		{"pop", pop_stack},
 		{"swap", swap_top},
 		{"add", add_top},
+		{"nop", nop_stack},
 		{NULL, NULL}
 	};
 	int i = 0;
