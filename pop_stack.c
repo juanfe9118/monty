@@ -16,7 +16,8 @@ void pop_stack(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	head = head->next;
-	head->prev = NULL;
+	if (head != NULL)
+		head->prev = NULL;
 	free(*stack);
 	*stack = head;
 }
