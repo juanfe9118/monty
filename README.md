@@ -18,17 +18,17 @@ To use the interpreter you have to call it as follows:
 
 The current instructions the interpreter handles are the following:
 
-* push - pushes an integer to the stack. Usage: >push [integer]
-* pall - prints the stack completely. Usage: >pall
-* pint - prints the top element of the stack. Usage: >pint
-* pop - deletes the top element of the stack. Usage: >pop
-* swap - swaps the first two elements. Usage: >swap
-* nop - does nothing. Usage: >nop
-* add - adds the first two elements and merges them. Usage: >add
-* sub - subtracts the first element from the second. Usage: >sub
-* mul - multiplies the first two elements. Usage: >mul
-* div - divides the second element by the first. Usage: >div
-* mod - returns the remainder of div. Usage: >mod
+* push - pushes an integer to the stack. Usage: `push [integer]`
+* pall - prints the stack completely. Usage: `pall`
+* pint - prints the top element of the stack. Usage: `pint`
+* pop - deletes the top element of the stack. Usage: `pop`
+* swap - swaps the first two elements. Usage: `swap`
+* nop - does nothing. Usage: `nop`
+* add - adds the first two elements and merges them. Usage: `add`
+* sub - subtracts the first element from the second. Usage: `sub`
+* mul - multiplies the first two elements. Usage: `mul`
+* div - divides the second element by the first. Usage: `div`
+* mod - returns the remainder of div. Usage: `mod`
 
 #### DESCRIPTION
 
