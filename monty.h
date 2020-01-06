@@ -54,5 +54,6 @@ void div_top(stack_t **, unsigned int);
 void mul_top(stack_t **, unsigned int);
 void mod_top(stack_t **, unsigned int);
 void pchar_top(stack_t **, unsigned int);
+void pstr_stack(stack_t **, unsigned int);
 
 #endif /*MONTY_H*/
