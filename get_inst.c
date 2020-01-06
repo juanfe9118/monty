@@ -19,6 +19,7 @@ void (*get_inst(char *tok))(stack_t **, unsigned int)
 		{"div", div_top},
 		{"mul", mul_top},
 		{"mod", mod_top},
+		{"pchar", pchar_top},
 		{NULL, NULL}
 	};
 	int i = 0;
